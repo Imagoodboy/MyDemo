@@ -1,0 +1,12 @@
+F:\编程\游戏\联网五子棋\MyGoBangClient\MyGoBangClient\bin\Debug\MyGoBangClient.exe.config
+F:\编程\游戏\联网五子棋\MyGoBangClient\MyGoBangClient\bin\Debug\MyGoBangClient.exe
+F:\编程\游戏\联网五子棋\MyGoBangClient\MyGoBangClient\bin\Debug\MyGoBangClient.pdb
+F:\编程\游戏\联网五子棋\MyGoBangClient\MyGoBangClient\bin\Debug\TCPDLL.dll
+F:\编程\游戏\联网五子棋\MyGoBangClient\MyGoBangClient\bin\Debug\TCPDLL.pdb
+F:\编程\游戏\联网五子棋\MyGoBangClient\MyGoBangClient\obj\Debug\MyGoBangClient.Form1.resources
+F:\编程\游戏\联网五子棋\MyGoBangClient\MyGoBangClient\obj\Debug\MyGoBangClient.Properties.Resources.resources
+F:\编程\游戏\联网五子棋\MyGoBangClient\MyGoBangClient\obj\Debug\MyGoBangClient.csproj.GenerateResource.Cache
+F:\编程\游戏\联网五子棋\MyGoBangClient\MyGoBangClient\obj\Debug\MyGoBangClient.exe
+F:\编程\游戏\联网五子棋\MyGoBangClient\MyGoBangClient\obj\Debug\MyGoBangClient.pdb
+F:\编程\游戏\联网五子棋\MyGoBangClient\MyGoBangClient\obj\Debug\MyGoBangClient.csprojResolveAssemblyReference.cache
+F:\编程\游戏\联网五子棋\MyGoBangClient\MyGoBangClient\obj\Debug\MyGoBangClient.Form2.resources
