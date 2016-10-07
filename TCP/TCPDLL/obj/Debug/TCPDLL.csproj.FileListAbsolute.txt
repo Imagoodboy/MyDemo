@@ -1,0 +1,5 @@
+F:\编程\网络方面\TCPDLL\TCPDLL\obj\Debug\TCPDLL.csprojResolveAssemblyReference.cache
+F:\编程\网络方面\TCPDLL\TCPDLL\bin\Debug\TCPDLL.dll
+F:\编程\网络方面\TCPDLL\TCPDLL\bin\Debug\TCPDLL.pdb
+F:\编程\网络方面\TCPDLL\TCPDLL\obj\Debug\TCPDLL.dll
+F:\编程\网络方面\TCPDLL\TCPDLL\obj\Debug\TCPDLL.pdb
