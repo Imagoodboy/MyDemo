@@ -27,7 +27,10 @@ namespace MyGoBangClient
                      {
                          int num_x = (xs - CreatChessBoard.CHESS_ST) / CreatChessBoard.CHESS_SPACE; //落子在棋盘中的X位置
                          int num_y = (xf - CreatChessBoard.CHESS_ST) / CreatChessBoard.CHESS_SPACE; //落子在棋盘中的Y位置
-                         Form1.MyClient.SendPublicMessage("GAME_RUN|" + Form1.mID+"|"+Form1.vsID + "|" +Form1.Player_Now+"|"+ num_x + "|" + num_y+"|"+xs+"|"+xf + "|" + Form1.mRoom);
+                         if (num_x <= 15 && num_y <= 15)
+                         {
+                             Form1.MyClient.SendPublicMessage("GAME_RUN|" + Form1.mID + "|" + Form1.vsID + "|" + Form1.Player_Now + "|" + num_x + "|" + num_y + "|" + xs + "|" + xf + "|" + Form1.mRoom);
+                         }
                      }
                  }
              }

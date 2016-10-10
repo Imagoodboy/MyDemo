@@ -31,16 +31,6 @@ namespace MyGoBangClient
             //textBox1_INFO.AppendText("[系统]:当前房间号为" + Form1.mRoom + "号\n");
       //  }
 
-        private void Form2_Paint(object sender, PaintEventArgs e)
-        {
-            string msg  = "";
-            string msg2 = "";
-            if (Form1.Player == 1) {msg = "(先手)";msg2 ="(后手)";}
-            else if(Form1.Player == 2){msg = "(后手)";msg2 ="(先手)";}
-            label_player1.Text = "我:" + Form1.mName + msg;
-            label_player2.Text = "对手：" + Form1.vsName + msg2;
-        }
-
         private void btn_send_Click(object sender, EventArgs e)
         {
             string msg = textBox1_MSG.Text;
@@ -53,8 +43,19 @@ namespace MyGoBangClient
         {
             if (Form1.flag_Exit == 0)
             {
+                Form1.ifGame = false;
                 Form1.MyClient.SendPublicMessage("GAME_EXIT|" + Form1.mName + "|" + Form1.mID + "|" + Form1.vsID);
             }
+        }
+
+        private void Form2_Paint(object sender, PaintEventArgs e)
+        {
+             string msg  = "";
+             string msg2 = "";
+             if (Form1.Player == 1) {msg = "(先手)";msg2 ="(后手)";}
+             else if(Form1.Player == 2){msg = "(后手)";msg2 ="(先手)";}
+             label_player1.Text = "我:" + Form1.mName + msg;
+             label_player2.Text = "对手：" + Form1.vsName + msg2;
         }
     }
 }

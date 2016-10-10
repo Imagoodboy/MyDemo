@@ -23,7 +23,7 @@ namespace MyGoBangServer
         private void btn_open_Click(object sender, EventArgs e)
         {
             textBox1.AppendText("等待客户端连接\n");
-            TCPServer MyServer = new TCPServer("192.168.1.99", 5566, 10);//127.0.0.1
+            TCPServer MyServer = new TCPServer("127.0.0.1", 5566, 10);//127.0.0.1
             MyServer.ReturnMsg += new ReturnSomeMsg2(SetMsg);
             MyServer.Start();
         }

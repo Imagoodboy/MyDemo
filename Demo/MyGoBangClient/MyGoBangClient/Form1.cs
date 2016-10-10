@@ -19,9 +19,9 @@ namespace MyGoBangClient
             public string name;//名字
             public int id;//用户ID
         };
-
-        public static TCPClient MyClient = new TCPClient("192.168.1.99", 5566);//127.0.0.1
+        public static TCPClient MyClient = new TCPClient("127.0.0.1", 5566);//127.0.0.1
         private ListViewItem xy;//获取listview中的项
+        public static bool ifGame = false;//记录是否正在游戏
         public static string vsName;//记录对手的名字
         public static string mName;//记录我的名字
         public static int mID;//记录我的ID
@@ -71,6 +71,7 @@ namespace MyGoBangClient
                 this.SetText("[系统]:玩家" + vsName + "接受了你的挑战!\n",1);
                 Player = 1;//挑战方先手
                 Player_Now = 1; //目前下棋方
+                ifGame = true;
                 this.Invoke((MethodInvoker)delegate //通过委托，回到主线程，创建form2
                 {
                     flag_Exit = 0;
@@ -99,8 +100,7 @@ namespace MyGoBangClient
                         Pen p2 = new Pen(Color.Black, 2);
                         SolidBrush b1 = new SolidBrush(Color.Black);
                         CreatChessBoard.gp.FillEllipse(b1, int.Parse(tokens[0]) - 10, int.Parse(tokens[1]) - 10, 20, 20);//画棋子
-                    }
-                   
+                    }                  
                 });
                 if (Player_Now == 1) Player_Now = 2;
                 else if (Player_Now == 2) Player_Now = 1;
@@ -149,6 +149,7 @@ namespace MyGoBangClient
             }
             else if (flag == 17)//对方关闭游戏界面，对战结束
             {
+                ifGame = false;
                 this.Invoke((MethodInvoker)delegate 
                 {
                     flag_Exit = 1;
@@ -252,17 +253,25 @@ namespace MyGoBangClient
 
         private void 挑战ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            vsID =int.Parse(xy.SubItems[0].Text);
             //textBox2.Text = a;
-            if (vsID == mID)
+            if (ifGame == true)
+            {
+                textBox1.AppendText("[系统]:你正在游戏中,不能挑战他人!\n");
+            }
+            else if (xy.SubItems[2].Text == "正在游戏")
+            {
+                textBox1.AppendText("[系统]:该玩家正在游戏,不能挑战!\n");
+            }
+            else if (int.Parse(xy.SubItems[0].Text) == mID)
             {
                 textBox1.AppendText("[系统]:不能挑战自己!\n");
             }
             else
             {
+                vsID = int.Parse(xy.SubItems[0].Text);
                 MyClient.SendPublicMessage("CHALLENGE|" + mID + "|" + vsID);
                 vsName = FindName(vsID);
-                textBox1.AppendText("[系统]:你挑战了"+vsName+"!\n");
+                textBox1.AppendText("[系统]:你挑战了" + vsName + "!\n");
             }
         }
         private string FindName(int vsid) //寻找对手昵称
@@ -293,6 +302,7 @@ namespace MyGoBangClient
             {
                 MyClient.SendPublicMessage("CHALLENGE_YES|" + mID + "|" + vsID);
                 textBox1.AppendText("[系统]:你接受了"+vsName+"的挑战!\n");
+                ifGame = true;
                 Player = 2;//被挑战方后手
                 Player_Now = 1; //目前下棋方
                 flag_Exit = 0;
