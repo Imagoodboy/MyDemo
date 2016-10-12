@@ -200,8 +200,8 @@ namespace TCPDLL
                         if (vis[int.Parse(tokens[8]),int.Parse(tokens[4]), int.Parse(tokens[5])] == 0) //判断棋子是否可下
                         {
                             vis[int.Parse(tokens[8]), int.Parse(tokens[4]), int.Parse(tokens[5])] = int.Parse(tokens[3]);
-                            SendPrivateMessage(-1, int.Parse(tokens[1]), "GAME_RUN|" + tokens[6] + "|" + tokens[7]);
-                            SendPrivateMessage(-1, int.Parse(tokens[2]), "GAME_RUN|" + tokens[6] + "|" + tokens[7]);
+                            SendPrivateMessage(-1, int.Parse(tokens[1]), "GAME_RUN|" + tokens[4] + "|" + tokens[5]);
+                            SendPrivateMessage(-1, int.Parse(tokens[2]), "GAME_RUN|" + tokens[4] + "|" + tokens[5]);
                             Winer = JudgeWiner(int.Parse(tokens[8]), int.Parse(tokens[4]), int.Parse(tokens[5]));
                             if (Winer == true) //如果获胜
                             {

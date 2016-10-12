@@ -87,7 +87,7 @@ namespace TCPDLL
                 }
                 catch (Exception e)
                 {
-                    ReturnMsg(1,e.Message+"\n");//"[系统]:暂时无法连接到服务器
+                    ReturnMsg(1, "[系统]:暂时无法连接到服务器\n");//"[系统]:暂时无法连接到服务器
                     //this.SetText("因为一个错误的发生，暂时无法连接到服务器，错误信息为:" + e.Message + "\n");
                     isConnected = false;
                 }

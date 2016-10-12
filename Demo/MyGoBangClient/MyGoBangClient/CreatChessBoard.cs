@@ -14,6 +14,8 @@ namespace MyGoBangClient
         public const int CHESS_ST = 20;
         public const int CHESS_LENGTH = 440;
         public const int CHESS_SPACE = 30;
+        public static Bitmap bmp = new Bitmap(450, 450);//在内存中建立一块“虚拟画布”
+        public static Graphics bufferGraphics = Graphics.FromImage(bmp);//获取这块内存画布的Graphics引用
         //构造方法,用来传参
         public CreatChessBoard(Graphics _gp, Color _back)
         {
@@ -24,14 +26,13 @@ namespace MyGoBangClient
         //画一个棋盘
         public void DrawChessBoard() 
         {
-            ControlChess a = new ControlChess();
-            //a.Init();
-            gp.Clear(back);
+            bufferGraphics.Clear(back);
+            //gp.Clear(back);
             Pen p = new Pen(Color.Black, 2);
             for (int i = 0; i < CHESS_SIZE; i++)
             {
-                gp.DrawLine(p, CHESS_ST, CHESS_ST + i * CHESS_SPACE, CHESS_LENGTH, CHESS_ST + i * CHESS_SPACE);
-                gp.DrawLine(p, CHESS_ST + i * CHESS_SPACE, CHESS_ST, CHESS_ST + i * CHESS_SPACE, CHESS_LENGTH);
+                bufferGraphics.DrawLine(p, CHESS_ST, CHESS_ST + i * CHESS_SPACE, CHESS_LENGTH, CHESS_ST + i * CHESS_SPACE);
+                bufferGraphics.DrawLine(p, CHESS_ST + i * CHESS_SPACE, CHESS_ST, CHESS_ST + i * CHESS_SPACE, CHESS_LENGTH);
             }
         }
 

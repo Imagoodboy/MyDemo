@@ -123,12 +123,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label_player1;
-        private System.Windows.Forms.Label label_player2;
         private System.Windows.Forms.TextBox textBox1_MSG;
         private System.Windows.Forms.Button btn_send;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.TextBox textBox1_INFO;
+        public System.Windows.Forms.Label label_player2;
+        public System.Windows.Forms.Label label_player1;
     }
 }
